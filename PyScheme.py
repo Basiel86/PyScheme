@@ -120,14 +120,14 @@ def pipe_section(x_pos, y_pos, section_len, section_stat, isfirst=False):
         myturtle.fillcolor(cl)
 
         up_left = (x1 + us, y_pos + orient)
-        up_rigth = (x1 + us + fea_len, y_pos + orient)
+        up_right = (x1 + us + fea_len, y_pos + orient)
         dwn_left = (x1 + us, y_pos + fea_wid + orient)
         dwn_right = (x1 + us + fea_len, y_pos + fea_wid + orient)
 
         myturtle.setposition(up_left)
         myturtle.begin_fill()
         # myturtle.down()
-        myturtle.setposition(up_rigth)
+        myturtle.setposition(up_right)
         myturtle.setposition(dwn_right)
         myturtle.setposition(dwn_left)
         myturtle.setposition(up_left)
@@ -234,7 +234,7 @@ def pipe_section(x_pos, y_pos, section_len, section_stat, isfirst=False):
     write_text(x1=x1 + section_len / 2, y1=el_diam + y_pos - 30, text=str(section_stat['weld_angle']), align='center')
     write_text(x1=x1, y1=y_pos + el_diam * 2 + 15, text='{:.1f}'.format(section_stat['dist']), align='center')
 
-    for i in range(20):
+    for i in range(50):
         us = random.randrange(0, section_len)
         fea_len = random.randrange(2, 10)
         fea_wid = random.randrange(5, 10)
@@ -283,6 +283,7 @@ def main():
     print(UP)
 
     turtle.exitonclick()
+
 
 
 if __name__ == "__main__":
